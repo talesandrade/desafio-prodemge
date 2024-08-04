@@ -1,0 +1,29 @@
+
+   INFO  Running migrations.  
+
+  2024_08_03_163230_create_pessoa_endereco_table ....................................................................................... 2.13ms FAIL
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'pessoa_endereco' already exists (Connection: mysql, SQL: create table `pessoa_endereco` (`id` bigint unsigned not null auto_increment primary key, `id_pessoa` int not null, `id_endereco` int not null, `created_at` timestamp null, `updated_at` timestamp null, `deleted_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:813
+    809▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    810▕                 );
+    811▕             }
+    812▕ 
+  ➜ 813▕             throw new QueryException(
+    814▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    815▕             );
+    816▕         }
+    817▕     }
+
+      [2m+9 vendor frames [22m
+
+  10  database/migrations/2024_08_03_163230_create_pessoa_endereco_table.php:14
+      Illuminate\Support\Facades\Facade::__callStatic()
+      [2m+26 vendor frames [22m
+
+  37  artisan:13
+      Illuminate\Foundation\Application::handleCommand()
+
